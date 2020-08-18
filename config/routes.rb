@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/new'
-  get 'users/create'
-  get 'users/show'
   get 'appointments/new'
   get 'appointments/create'
   devise_for :users
