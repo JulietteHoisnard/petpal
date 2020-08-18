@@ -6,12 +6,13 @@ class AppointmentsController < ApplicationController
   end
 
   def create
+    @appointment = Appointment.new(appointment_params)
     @pet = Pet.find(params[:pet_id])
-    # @pet = Pet.find(1)
     @appointment.pet = @pet
+    @appointment.user = current_user
     if @appointment.save
       puts "appointment saved sucessfully!"
-      # redirect_to dashboard
+      redirect_to dashboard_path
     else
       render :new
     end
