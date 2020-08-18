@@ -25,15 +25,15 @@
 
   <script>
     const start_date = flatpickr('#appointment_start_date_time', {
-                minDate: "today",
-                enableTime: true,
-                dateFormat: "F j, Y H:i",
-              })
+      minDate: "today",
+      enableTime: true,
+      dateFormat: "F j, Y H:i",
+    })
     const end_date = flatpickr('#appointment_end_date_time', {
-                minDate: start_date._input.addEventListener('change', e => end_date.set('minDate', start_date.selectedDates[0])),
-                enableTime: true,
-                dateFormat: "F j, Y H:i",
-              })
+      enableTime: true,
+      dateFormat: "F j, Y H:i",
+    })
+    start_date._input.addEventListener('change', e => end_date.set('minDate', start_date.selectedDates[0]))
   </script>
 
   <div class="row">
