@@ -1,3 +1,5 @@
+require "open-uri"
+require 'json'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -5,3 +7,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+dog = Pet.create(name: "Dog", species: "mammal", availability: false, pet_ability: "walks in the park", description: "fluffy", photo: "link_of_image", location: "Berlin" )
+cat = Pet.create(name: "Cat", species: "mammal", availability: false, pet_ability: "walks in the park", description: "fluffy", photo: "polaroid", location: "Berlin")
+dragon = Pet.create(name: "Dragon", species: "mammal", availability: false, pet_ability: "walks in the park", description: "fluffy", photo: "polaroid", location: "Berlin")
+lizard = Pet.create(name: "Lizard", species: "mammal", availability: false, pet_ability: "walks in the park", description: "fluffy", photo: "polaroid", location: "Berlin")
+
