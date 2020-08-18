@@ -1,0 +1,16 @@
+<div>
+  <h1>My Dashboard</h1>
+</div>
+<div>
+  <h2>My appointments</h2>
+  <ul>
+    <% if @appointments %>
+      <% @appointments.each do |appointment| %>
+        <li> <%= appointment.pet.name %></li>
+        <li> <%= appointment.start_date_time %></li>
+        <li> <%= appointment.end_date_time %></li>
+      <%end%>
+    <%end%>
+  </ul>
+  
+</div>
