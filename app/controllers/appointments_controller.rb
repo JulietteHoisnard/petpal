@@ -1,11 +1,13 @@
 class AppointmentsController < ApplicationController
   def new
     @pet = Pet.find(params[:pet_id])
+    # @pet = Pet.find(1)
     @appointment = Appointment.new
   end
 
   def create
     @pet = Pet.find(params[:pet_id])
+    # @pet = Pet.find(1)
     @appointment.pet = @pet
     if @appointment.save
       puts "appointment saved sucessfully!"
