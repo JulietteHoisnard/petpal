@@ -1,0 +1,17 @@
+<div class="container">
+
+  <h1>YOYO I’m <%= @pet.name  %>! Look at what we can do together:</h1>
+
+  <ul>
+    <li>👋  <%= @pet.pet_ability %></li>
+    <li>Avatar  This is <%= @pet.name %>'s owner! Check the profile!</li>
+  </ul>
+
+  <p>🕜  When do you went to meet me?</p>
+  <%= simple_form_for @pet do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  <% end %>
+
+
+</div>
