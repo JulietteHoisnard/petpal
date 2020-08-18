@@ -1,17 +1,31 @@
 <div class="container">
 
-  <h1>YOYO I’m <%= @pet.name  %>! Look at what we can do together:</h1>
+   <div class="row">
+    <div class="col-xl-6">
+      Images here
+    </div>
+       <div class="col">
+         <h1>YOYO I’m <%= @pet.name  %>! Look at what we can do together:</h1>
 
-  <ul>
-    <li>👋  <%= @pet.pet_ability %></li>
-    <li>Avatar  This is <%= @pet.name %>'s owner! Check the profile!</li>
-  </ul>
+          <ul>
+            <li>👋  <%= @pet.pet_ability %></li>
+            <li>Avatar  This is <%= @pet.name %>'s owner! Check the profile!</li>
+          </ul>
 
-  <p>🕜  When do you went to meet me?</p>
-  <%= simple_form_for @pet do |f| %>
-    <%= f.input :name %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  <% end %>
+          <p>🕜  When do you went to meet me?</p>
+            <%= simple_form_for @pet do |f| %>
+            <%= f.input :availability %>
+            <%= f.button :submit, class: 'btn btn-success' %>
+          <% end %>
+        </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-12 text-center">
+      <h2>A bit about me</h2>
+      <p><%= @pet.description %></p>
+    </div>
+  </div>
 
 
 </div>
