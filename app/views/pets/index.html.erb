@@ -1,0 +1,17 @@
+<div class="page-container">
+  <div class="title">
+    <h1>All my PetPals</h1>
+  </div>
+  <div>
+    <div class="card-container d-flex">
+      <% @pets.each do |pet| %>
+        <div class="card">
+          <%= link_to pet.name, pet_path(pet) %>
+        </div>
+      <% end %>
+      <div class="card d-inline-flex">
+        <%= link_to 'See my pet', pet_path('new') %>
+      </div>
+    </div>
+  </div>
+</div>
