@@ -3,19 +3,37 @@
 
     <div class="col-3">
       <h2>User profile</h2>
-      <div class="card" style="width: 16rem;">
-        <img class="card-img-top" src="https://theamazingcheetahecology.weebly.com/uploads/2/4/4/1/24416532/2519449_orig.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title"><%= @user.username %></h5>
-          <p class="card-text">Your bio goes here. :) Say something cool about yourself!</p>
-          <a href="#" class="btn btn-warning">Edit profile</a>
+
+      <div class="card-container d-flex">
+       <div class="card" style="width: 16rem;">
+          <img class="card-img-top" src="https://theamazingcheetahecology.weebly.com/uploads/2/4/4/1/24416532/2519449_orig.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= @user.username %></h5>
+            <p class="card-text">Your bio goes here. :) Say something cool about yourself!</p>
+            <a href="#" class="btn btn-warning">Edit profile</a>
+          </div>
         </div>
+
       </div>
+
     </div>
 
+
     <div class="col-9">
-      <div class="card-rectangle">
-        <h2>PetPals owned by <%= @user.username %></h2>
+      <h2>PetPals owned by <%= @user.username %></h2>
+
+      <div class="card-columns">
+        <% @pets.each do |pet| %>
+          <div class="card" style="width: 300px;">
+            <%= cl_image_tag pet.photo.key, height: 225, width: 300, crop: :fill %>
+            <div class="card-body">
+              <h5 class="card-title"><%= pet.name %></h5>
+              <p class="card-text"><%= pet.description %></p>
+              <a href="#" class="btn btn-warning btn-sm">Edit PetPal</a>
+              <a href="#" class="btn btn-warning btn-sm">Delete PetPal</a>
+            </div>
+          </div>
+        <% end %>
       </div>
 
     </div>
