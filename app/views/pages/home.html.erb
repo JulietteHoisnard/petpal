@@ -14,6 +14,9 @@
       </div>
     </div>
   </div>
+  <div id="scrollhint">
+    <a href="#" class="arrow down" onclick="scrollDown(event)">Scrolldown</a>
+  </div>
 </div>
 
 <div class="container">
@@ -72,3 +75,10 @@
     <h2>Frequently asked questions</h2>
   </div>
 </div>
+
+<script>
+  function scrollDown(e) {
+    e.preventDefault()
+    document.querySelector("div.container:nth-child(3)").scrollIntoView({behavior: "smooth"});
+  }
+</script>
