@@ -1,17 +1,47 @@
 <div class="container">
 
-  <h1>YOYO I’m <%= @pet.name  %>! Look at what we can do together:</h1>
+   <div class="row">
+    <div class="col-xl-6">
+      Images here
+    </div>
+       <div class="col">
+         <h1>YOYO I’m <%= @pet.name  %>! Look at what we can do together:</h1>
 
-  <ul>
-    <li>👋  <%= @pet.pet_ability %></li>
-    <li>Avatar  This is <%= @pet.name %>'s owner! Check the profile!</li>
-  </ul>
+          <ul>
+            <li>👋  <%= @pet.pet_ability %></li>
+            <li>Avatar  This is <%= @pet.name %>'s owner! Check the profile!</li>
+          </ul>
 
-  <p>🕜  When do you went to meet me?</p>
-  <%= simple_form_for @pet do |f| %>
-    <%= f.input :name %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  <% end %>
+          <p>🕜  When do you want to meet me?</p>
+            <%= simple_form_for([@pet, @appointment]) do |f| %>
+              <%= f.label :start_date_time %>
+              <%= f.text_field :start_date_time %>
+              <%= f.label :end_date_time %>
+              <%= f.text_field :end_date_time %>
+              <%= f.submit %>
+            <% end %>
+        </div>
+  </div>
+
+  <script>
+    const start_date = flatpickr('#appointment_start_date_time', {
+      minDate: "today",
+      enableTime: true,
+      dateFormat: "F j, Y H:i",
+    })
+    const end_date = flatpickr('#appointment_end_date_time', {
+      enableTime: true,
+      dateFormat: "F j, Y H:i",
+    })
+    start_date._input.addEventListener('change', e => end_date.set('minDate', start_date.selectedDates[0]))
+  </script>
+
+  <div class="row">
+    <div class="col-xl-12 text-center">
+      <h2>A bit about me</h2>
+      <p><%= @pet.description %></p>
+    </div>
+  </div>
 
 
 </div>

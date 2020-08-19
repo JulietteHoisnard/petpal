@@ -1,10 +1,12 @@
 class PetsController < ApplicationController
+ 
   def index
     @pets = Pet.all
   end
 
   def show
     @pet = Pet.find(params[:id])
+    @appointment = Appointment.new
   end
 
   def new
@@ -24,4 +26,5 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     @pet.destroy
   end
+
 end
