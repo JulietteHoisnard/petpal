@@ -1,7 +1,6 @@
 class PetsController < ApplicationController
-
   def index
-   @pets = Pet.where(params[:species]) # raise
+    @pets = Pet.where(params[:species])
   end
 
   def show
@@ -36,6 +35,5 @@ class PetsController < ApplicationController
     .require(:pet)
     .permit(:name, :user_id, :species, :availability, :pet_ability, :pet_ability, :description, :photo, :location)
   end
-  
 
 end
