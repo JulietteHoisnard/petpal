@@ -5,10 +5,15 @@
     <div class="search-inline">
       <form action="/pets" class="form-inline">
         <div class="input-group mb-2 mr-sm-2">
-          <input type="text" class="form-control" id="species" placeholder="Species">
+        <!-- <input type="text" class="form-control" id="species" placeholder="Species"> -->
+            <%= simple_form_for @pet do |f| %>
+            <%= f.input :species, collection: ["dog", "dragon", "cat", "lion", "hamster", "lizard", "anteater", "horse", "cactus"] %>
+            <%= f.button :submit, 'Find Your PetPal!' %>
+            <% end %>
         </div>
         <div>
-          <button type="submit" class="btn btn-warning mb-2">Find my PetPal</button>
+          <!-- <button type="submit" class="btn btn-warning mb-2">Find my PetPal</button> -->
+
         </div>
       </form>
     </div>

@@ -1,7 +1,7 @@
 class PetsController < ApplicationController
- 
+
   def index
-    @pets = Pet.all
+   @pets = Pet.where(params[:species]) # raise
   end
 
   def show

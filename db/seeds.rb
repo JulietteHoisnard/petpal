@@ -8,8 +8,9 @@ require 'json'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-dog = Pet.create(name: "Dog", species: "mammal", availability: false, pet_ability: "walks in the park", description: "fluffy", photo: "link_of_image", location: "Berlin" )
-cat = Pet.create(name: "Cat", species: "mammal", availability: false, pet_ability: "walks in the park", description: "fluffy", photo: "polaroid", location: "Berlin")
-dragon = Pet.create(name: "Dragon", species: "mammal", availability: false, pet_ability: "walks in the park", description: "fluffy", photo: "polaroid", location: "Berlin")
-lizard = Pet.create(name: "Lizard", species: "mammal", availability: false, pet_ability: "walks in the park", description: "fluffy", photo: "polaroid", location: "Berlin")
+dog = Pet.create(name: "George", species: "dog", availability: false, pet_ability: "sleeps", description: "fluffy", photo: "link_of_image", location: "Vienna" )
+cat = Pet.create(name: "Kelly", species: "dragon", availability: true, pet_ability: "walks in the park", description: "fluffy", photo: "polaroid", location: "Paris")
+dragon = Pet.create(name: "Tom", species: "dragon", availability: false, pet_ability: "dances on the roof", description: "fluffy", photo: "polaroid", location: "Poznan")
+lizard = Pet.create(name: "Drake", species: "dog", availability: true, pet_ability: "tricks or treats", description: "fluffy", photo: "polaroid", location: "Berlin")
+
 
