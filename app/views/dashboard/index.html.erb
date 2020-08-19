@@ -25,7 +25,7 @@
         <li> <%= pet.availability %></li>
         <li> <%= pet.pet_ability %></li>
         <li> <%= pet.location %></li>
-        <li><%= cl_image_tag @pet.photo.key, height: 100, width: 200, crop: :fill %></li>
+        <li><%= cl_image_tag pet.photo.key, height: 100, width: 200, crop: :fill %></li>
       <%end%>
     <% end %>
   </ul>
