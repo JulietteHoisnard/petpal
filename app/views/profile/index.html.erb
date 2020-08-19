@@ -3,8 +3,14 @@
 
     <div class="col-3">
       <h2>User profile</h2>
-      <br>
-      <p><%= @user.username %></p>
+      <div class="card" style="width: 16rem;">
+        <img class="card-img-top" src="https://theamazingcheetahecology.weebly.com/uploads/2/4/4/1/24416532/2519449_orig.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= @user.username %></h5>
+          <p class="card-text">Your bio goes here. :) Say something cool about yourself!</p>
+          <a href="#" class="btn btn-warning">Edit profile</a>
+        </div>
+      </div>
     </div>
 
     <div class="col-9">
