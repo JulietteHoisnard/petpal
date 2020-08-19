@@ -12,5 +12,21 @@
       <%end%>
     <%end%>
   </ul>
-  
+</div>
+<div>
+<h2>My pets</h2>
+  <p> <%= link_to 'Add a pet', new_pet_path(@pet) %></p>
+  <ul>
+    <% if @pets %>
+      <% @pets.each do |pet| %>
+        <li> <%= pet.name %></li>
+        <li> <%= pet.species %></li>
+        <li> <%= pet.description %></li>
+        <li> <%= pet.availability %></li>
+        <li> <%= pet.pet_ability %></li>
+        <li> <%= pet.location %></li>
+        <li><%= cl_image_tag pet.photo.key, height: 100, width: 200, crop: :fill %></li>
+      <%end%>
+    <% end %>
+  </ul>
 </div>
