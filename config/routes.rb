@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   # post 'appointments/create', to: 'appointments#create'
   devise_for :users
   root to: 'pages#home'
-  resources :pets do  
+  resources :pets do
     resources :appointments, only: [:new, :create]
   end
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
