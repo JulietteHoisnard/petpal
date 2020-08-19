@@ -3,15 +3,13 @@
   <div class="container">
     <div class="row justify-content-center pb-3">
       <h1>Find your furry pal for a weekend or just for a walk</h1>
-    </div>
-    <div>
       <div class="search-inline">
         <form action="/pets" class="form-inline justify-content-center">
           <div class="input-group mb-2 mr-sm-2">
-            <input type="text" class="form-control" id="species" placeholder="Species">
-          </div>
-          <div>
-            <button type="submit" class="btn btn-warning mb-2">Find my PetPal</button>
+            <%= simple_form_for @pet do |f| %>
+            <%= f.input :species, collection: ["dog", "dragon", "cat", "lion", "hamster", "lizard", "anteater", "horse", "cactus"] %>
+            <%= f.button :submit, 'Find Your PetPal!' %>
+            <% end %>
           </div>
         </form>
       </div>
