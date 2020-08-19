@@ -16,3 +16,29 @@ h2 {
 .info-card {
   padding: 24px;
 }
+
+.btn-warning {
+  margin: 0 16px !important;
+}
+
+#pet_species {
+  margin: 0 16px;
+  flex-grow: 1;
+  height: unset;
+}
+
+#label-home {
+  color: white;
+  width: 500px;
+  display: flex;
+}
+
+.select {
+  margin: 0 16px;
+}
+
+.pet_species {
+  width: 500px;
+  display: flex;
+  align-items: stretch !important;
+}
