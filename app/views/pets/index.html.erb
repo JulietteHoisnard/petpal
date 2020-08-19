@@ -1,17 +1,29 @@
-<div class="page-container">
-  <div class="title">
-    <h1>All My PetPals</h1>
+<div class="container">
+
+  <div class="row justify-content-center mt-4">
+     <h1>All My PetPals</h1>
   </div>
+
+
   <div>
     <div class="card-container d-flex">
       <% @pets.each do |pet| %>
-        <div class="card">
-          <%= link_to pet.name, pet_path(pet) %>
+      <div class="card">
+        <div class="card-trip">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to pet.name, pet_path(pet) %></h2>
+              <p>Short description here!</p>
+            </div>
+            <h2 class="card-trip-pricing">£99.99</h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+        </div>
+
         </div>
       <% end %>
-      <div class="card d-inline-flex">
-        <%= link_to 'Add new pet', pet_path('new') %>
-      </div>
+
     </div>
   </div>
 </div>

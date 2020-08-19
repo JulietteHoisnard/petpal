@@ -15,8 +15,8 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/navbar' unless current_page?(:root) %>
     <%= yield %>
   </body>
 </html>

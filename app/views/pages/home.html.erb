@@ -1,18 +1,26 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <h1>Find your furry pal for a weekend or just for a walk</h1>
-
-    <div class="search-inline">
-      <form action="/pets" class="form-inline">
-        <div class="input-group mb-2 mr-sm-2">
-          <input type="text" class="form-control" id="species" placeholder="Species">
-        </div>
-        <div>
-          <button type="submit" class="btn btn-warning mb-2">Find my PetPal</button>
-        </div>
-      </form>
+<%#= render 'shared/navbar_landing' %>
+<div class="banner d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path("landing-bg.jpg") %>);">
+  <div class="container">
+    <div class="row justify-content-center pb-3">
+      <h1>Find your furry pal for a weekend or just for a walk</h1>
+    </div>
+    <div>
+      <div class="search-inline">
+        <form action="/pets" class="form-inline justify-content-center">
+          <div class="input-group mb-2 mr-sm-2">
+            <input type="text" class="form-control" id="species" placeholder="Species">
+          </div>
+          <div>
+            <button type="submit" class="btn btn-warning mb-2">Find my PetPal</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
+</div>
+
+<div class="container">
+
 
 
 </div>
@@ -29,7 +37,7 @@
 
       <div class="row info-card">
         <div class="col-3">
-          <%= image_tag("landing-1.jpg", size: "200x200") %>
+          <%= image_tag("landing-1.jpg", size: "250x250") %>
         </div>
         <div class="col-9">
           <h3>Find your furry PetPal</h3>
@@ -43,13 +51,13 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel laudantium excepturi, quod laborum eos, id esse beatae inventore repellendus, incidunt quo unde ratione maxime asperiores qui ipsa vero reprehenderit, aperiam.</p>
         </div>
         <div class="col-3">
-          <%= image_tag("landing-2.jpg", size: "200x200") %>
+          <%= image_tag("landing-2.jpg", size: "250x250") %>
         </div>
       </div>
 
       <div class="row info-card">
         <div class="col-3">
-          <%= image_tag("landing-3.jpg", size: "200x200") %>
+          <%= image_tag("landing-3.jpg", size: "250x250") %>
         </div>
         <div class="col-9">
           <h3>Have loads of fun!</h3>
