@@ -10,11 +10,11 @@
       <% @pets.each do |pet| %>
       <div class="card">
         <div class="card-trip">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill %>
           <div class="card-trip-infos">
             <div>
               <h2><%= link_to pet.name, pet_path(pet) %></h2>
-              <p>Short description here!</p>
+              <p><%= link_to pet.description, pet_path(pet) %></p>
             </div>
             <h2 class="card-trip-pricing">£99.99</h2>
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
