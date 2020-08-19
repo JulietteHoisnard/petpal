@@ -2,13 +2,14 @@
   <div class="row">
 
     <div class="col-3">
-      <h1>User profile</h1>
+      <h2>User profile</h2>
       <br>
+      <p><%= @user.username %></p>
     </div>
 
     <div class="col-9">
       <div class="card-rectangle">
-        <h3>PetPals owned by</h3>
+        <h2>PetPals owned by <%= @user.username %></h2>
       </div>
 
     </div>
