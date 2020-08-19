@@ -2,24 +2,26 @@
 
    <div class="row">
     <div class="col-xl-6">
-      <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @pet.photo.key, height: 400, width: 550, crop: :fill %>
     </div>
        <div class="col">
-         <h1>YOYO I’m <%= @pet.name  %>! Look at what we can do together:</h1>
-
-          <ul>
-            <li>👋  <%= @pet.pet_ability %></li>
-            <li>Avatar  This is <%= @pet.name %>'s owner! Check the profile!</li>
-          </ul>
-
-          <p>🕜  When do you want to meet me?</p>
-            <%= simple_form_for([@pet, @appointment]) do |f| %>
-              <%= f.label :start_date_time %>
-              <%= f.text_field :start_date_time %>
-              <%= f.label :end_date_time %>
-              <%= f.text_field :end_date_time %>
-              <%= f.submit %>
-            <% end %>
+          <h1>YOYO I’m <%= @pet.name  %>!</h1>
+          <h2>Look at what we can do together:</h2>
+          <p>👋  <%= @pet.pet_ability %></p>
+          <div class="pet-owner">
+            <img src="https://cdn3.iconfinder.com/data/icons/business-round-flat-vol-1-1/36/user_account_profile_avatar_person_student_male-512.png" class="avatar" />
+            <p>This is <%= @pet.name %>'s owner! Check the profile!</p>
+          </div>
+          <div class="appointment-container">
+            <p>🕜  When do you want to meet me?</p>
+              <%= simple_form_for([@pet, @appointment]) do |f| %>
+                <%= f.label :start_date_time %>
+                <%= f.text_field :start_date_time %>
+                <%= f.label :end_date_time %>
+                <%= f.text_field :end_date_time %>
+                <button type="submit" class="btn btn-warning mb-2"><%= f.button :submit,'Reserve'%></button>
+              <% end %>
+            </div>
         </div>
   </div>
 

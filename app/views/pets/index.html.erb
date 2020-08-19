@@ -5,7 +5,7 @@
   </div>
 
 
-  <div>
+  <div id="cards-container">
     <div class="card-container d-flex">
       <% @pets.each do |pet| %>
       <div class="card">
@@ -16,16 +16,12 @@
               <h2><%= link_to pet.name, pet_path(pet) %></h2>
               <p><%= link_to pet.description, pet_path(pet) %></p>
             </div>
-            <h2 class="card-trip-pricing">£99.99</h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            <img src="https://cdn3.iconfinder.com/data/icons/business-round-flat-vol-1-1/36/user_account_profile_avatar_person_student_male-512.png" class="card-trip-user avatar-bordered" />
           </div>
         </div>
 
         </div>
       <% end %>
-
-      <div class="card d-inline-flex">
-      </div>
 
     </div>
   </div>
