@@ -7,7 +7,7 @@
     <%= f.input :species %>
     <%= f.input :pet_ability %>
     <%= f.input :location %>
-    <%= f.file_field :photo %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit 'Add Pet', class: 'btn btn-primary' %>
     <% end %>
     <hr>
