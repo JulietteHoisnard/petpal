@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#index'
+  get 'profile', to: 'profile#index'
   # get 'appointments/new', to: 'appointments#new'
   # post 'appointments/create', to: 'appointments#create'
   devise_for :users
