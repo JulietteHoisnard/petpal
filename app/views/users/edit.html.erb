@@ -1,0 +1,11 @@
+div class="container pt-5">
+  <h2>Edit your profile !!</h2>
+    <%= simple_form_for [@user] do |f| %>
+    <%= f.input :username %>
+    <%= f.input :bio %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit 'Modify', class: 'btn btn-primary' %>
+    <% end %>
+    <hr>
+    <%= link_to "Back", user_path, class: "btn btn-primary"%>
+</div>
