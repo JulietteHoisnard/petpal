@@ -1,7 +1,7 @@
 class PetsController < ApplicationController
- 
+
   def index
-    @pets = Pet.all
+    @pets = Pet.where(params[:species])
   end
 
   def show
@@ -36,6 +36,6 @@ class PetsController < ApplicationController
     .require(:pet)
     .permit(:name, :user_id, :species, :availability, :pet_ability, :description, :photo, :location)
   end
-  
+
 
 end

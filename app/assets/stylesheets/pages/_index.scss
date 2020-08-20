@@ -4,3 +4,13 @@
 @import "components/banner";
 @import "components/card";
 // @import "components/navbar_landing";
+
+a:link {
+  text-decoration: none;
+}
+
+#cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
