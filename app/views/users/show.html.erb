@@ -6,7 +6,7 @@
 
       <div class="card-container d-flex">
        <div class="card" style="width: 16rem;">
-          <%= cl_image_tag @user.photo.key,:class=>"card-img-top", crop: :fill %>
+          <%= cl_image_tag @user.avatar_url,:class=>"card-img-top", crop: :fill %>
           <div class="card-body">
             <h5 class="card-title"><%= @user.username %></h5>
             <p class="card-text"><%= @user.bio %></p>
@@ -31,7 +31,7 @@
       <div class="card-columns">
         <% @pets.each do |pet| %>
           <div class="card" style="width: 300px;">
-            <%= cl_image_tag pet.photo.key, height: 225, width: 300, crop: :fill %>
+            <%= cl_image_tag pet.avatar_url, height: 225, width: 300, crop: :fill %>
             <div class="card-body">
               <h5 class="card-title"><%= pet.name %></h5>
               <p class="card-text"><%= pet.description %></p>
