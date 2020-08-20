@@ -33,3 +33,11 @@
   margin: 16px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.link-color {
+  color: black;
+
+  &:hover {
+    color: white;
+  }
+}
