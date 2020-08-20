@@ -11,13 +11,13 @@
         <%= link_to pet_path(pet), style: "color: black;" do %>
           <div class="card" style="width: 350px;">
             <div class="card-trip">
-            <%= cl_image_tag pet.photo.key, height: 225, width: 350, crop: :fill %>
+            <%= cl_image_tag pet.avatar_url, height: 225, width: 350, crop: :fill %>
               <div class="card-trip-infos">
                 <div>
                   <h5><%= pet.name %></h5>
                   <p><%= pet.description %></p>
                 </div>
-                <img src="https://cdn3.iconfinder.com/data/icons/business-round-flat-vol-1-1/36/user_account_profile_avatar_person_student_male-512.png" class="card-trip-user avatar-bordered" />
+                <%= cl_image_tag pet.user.avatar_url, class: "card-trip-user avatar-bordered" %>
               </div>
             </div>
 
