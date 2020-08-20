@@ -70,33 +70,31 @@ h2 {
   bottom: 2px;
 }
 
-body{margin-top:20px;}
-
 .align-center {
     text-align: center;
 }
 .hash-list {
-    display: block;
     padding: 0;
     margin: 0 auto;
+}
+
+.hash-list > li {
+  flex: 1 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 768px){
     .hash-list.cols-3 > li:nth-last-child(-n+3) {
         border-bottom: none;
     }
-}
-@media (min-width: 768px){
-    .hash-list.cols-3 > li {
-        width: 33.3333%;
+    .hash-list  {
+      display: flex;
+    }
+    .hash-list > li:not(:last-child) {
+      border-right: 1px solid rgba(0, 0, 0, 0.2);
     }
 }
-.hash-list > li {
-    display: block;
-    float: left;
-    border-right: 1px solid rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
+
 .pad-30, .pad-30-all > * {
     padding: 30px;
 }
