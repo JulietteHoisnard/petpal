@@ -1,17 +1,64 @@
-<div>
-  <h1>My Dashboard</h1>
-</div>
-<div>
-  <h2>My appointments</h2>
-  <ul>
-    <% if @appointments %>
-      <% @appointments.each do |appointment| %>
-        <li> <%= appointment.pet.name %></li>
-        <li> <%= appointment.start_date_time %></li>
-        <li> <%= appointment.end_date_time %></li>
-      <%end%>
-    <%end%>
-  </ul>
+
+<div class="container container-large">
+
+  <div class="container justify-content-center my-3">
+    <div class="row d-flex align-items-center flex-column my-4">
+
+      <div>
+        <h1>My dashboard</h1>
+      </div>
+
+
+      <p> <div class="btn btn-warning"><%= link_to 'Add a pet', new_pet_path %></div></p>
+
+      <div class="alert alert-warning my-3 p-4" role="alert">
+        <h4 class="alert-heading">Success!</h4>
+        <br>
+        <%= cl_image_tag @appointments.last.pet.photo.key, crop: :fill %>
+        <p>
+        <p>You are well on your way to meet your new PetPal! </p>
+        <p>You'll be meeting <strong><%= @appointments.last.pet.name %></strong> next. We hope you enjoy this special moment.</p>
+        <hr>
+        <p class="mb-0">Make sure to check in with the pet's owner about any special care instructions.</p>
+      </div>
+
+      <hr>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="d-flex justify-content-around">
+
+      <div class="flex-item">
+        <h3>My next appointment</h3>
+        <% if @appointments %>
+          <p><strong><%= @appointments.last.pet.name %></strong></p>
+          <% date = @appointments.last.start_date_time %>
+          <% date_end = @appointments.last.end_date_time %>
+          <p><%= date.strftime("%A, %d %b %Y @ %l:%M %p") %> <br>until <%= date_end.strftime("%A, %d %b %Y @ %l:%M %p")%></p>
+        <% end %>
+      </div>
+
+      <div class="flex-item">
+        <h3>Past appointments</h3>
+        <% if @appointments %>
+          <% @appointments.each do |appointment| %>
+            <p><strong><%= appointment.pet.name %></strong></p>
+            <% date = appointment.start_date_time %>
+            <% date_end = appointment.end_date_time %>
+            <p><%= date.strftime("%A, %d %b %Y @ %l:%M %p") %> <br>until
+            <%=  date_end.strftime("%A, %d %b %Y @ %l:%M %p")%></p>
+            <hr>
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+
+
+  </div>
+
 
 </div>
 <div>
