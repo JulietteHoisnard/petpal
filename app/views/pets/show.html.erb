@@ -9,7 +9,7 @@
           <h2>Look at what we can do together:</h2>
           <p>👋  <%= @pet.pet_ability %></p>
           <div class="pet-owner">
-            <img src="https://cdn3.iconfinder.com/data/icons/business-round-flat-vol-1-1/36/user_account_profile_avatar_person_student_male-512.png" class="avatar" />
+            <%= link_to image_tag('https://cdn3.iconfinder.com/data/icons/business-round-flat-vol-1-1/36/user_account_profile_avatar_person_student_male-512.png'), profile_path %>
             <p>This is <%= @pet.name %>'s owner! Check the profile!</p>
           </div>
           <div class="appointment-container">

@@ -1,4 +1,6 @@
 class PetsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: :show
 
   def index
     if params[:query1].present? && params[:query2].present?
