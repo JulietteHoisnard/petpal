@@ -27,10 +27,10 @@ h2 {
   height: unset;
 }
 
-#label-home {
+.label-home {
   color: white;
-  width: 500px;
   display: flex;
+  margin: 0 16px;
 }
 
 .select {
@@ -38,7 +38,6 @@ h2 {
 }
 
 .pet_species {
-  width: 500px;
   display: flex;
   align-items: stretch !important;
 }

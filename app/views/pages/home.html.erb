@@ -5,9 +5,21 @@
       <div class="search-inline">
         <form action="/pets" class="form-inline justify-content-center">
           <div class="input-group mb-2 mr-sm-2">
-            <%= simple_form_for @pet do |f| %>
-            <div id="label-home"><%= f.input :species, collection: ["dog", "dragon", "cat", "lion", "hamster", "lizard", "anteater", "horse", "cactus"] %></div>
-            <button type="submit" class="btn btn-warning mb-2"><%= f.button :submit,'Find Your PetPal!'%></button>
+            <%= form_tag pets_path, method: :get do %>
+            <div class="label-home">
+              <%= text_field_tag :query1,
+              params[:query1],
+              class: "form-control",
+              placeholder: "Search by species" %>
+            </div>
+            <div class="label-home">
+              <%= text_field_tag :query2,
+              params[:query2],
+              class: "form-control",
+              placeholder: "Search by location" %>
+            </div>
+            <%# <button type="submit" class="btn btn-warning mb-2">Find Your PetPal!</button> %>
+            <%= submit_tag "Find Your PetPal!", class: "btn btn-warning mb-2" %>
             <% end %>
           </div>
         </form>
