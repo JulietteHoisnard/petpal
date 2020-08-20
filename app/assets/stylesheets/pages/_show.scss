@@ -2,17 +2,66 @@ ul {
   list-style-type: none;
 }
 
+.img-show {
+  height: 100%;
+  border-radius: 5px;
+}
+
 .pet-owner {
   display: flex;
+  font-size: 20px;
+  align-content: center;
+  margin-bottom: 20px;
 }
+
+.pet-owner p {
+  line-height: 2em;
+  height: 2em;
+  margin: 0;
+}
+
+.appointment-container {
+  margin-top: 20px;
+  font-size: 20px;
+  width: 80%;
+  margin: auto;
+  background: white;
+  border-radius: 5px;
+}
+
+.btn-book {
+  border-radius: 10px;
+  color: white !important;
+}
+
+#btn-book > input {
+  color: white !important;
+}
+
+
+.description {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 
 #new_appointment {
   display: flex;
   flex-direction: column;
-  border: solid black 1px;
-  padding: 16px;
+  border: solid #C8C8C8  1px;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
 }
 
 #appointment_end_date_time {
   margin-bottom: 16px;
+}
+
+.what-we-can-do {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 20px;
 }
