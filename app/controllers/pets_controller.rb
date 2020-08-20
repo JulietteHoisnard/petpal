@@ -3,7 +3,13 @@ class PetsController < ApplicationController
   def index
     if params[:query1].present? && params[:query2].present?
       @pets = Pet.where("species ILIKE ? AND location ILIKE ?", "%#{params[:query1]}%", "%#{params[:query2]}%")
-    else
+    elsif
+      params[:query1].present?
+      @pets = Pet.where("species ILIKE ?", "%#{params[:query1]}%")
+    elsif
+      params[:query2].present?
+      @pets = Pet.where("location ILIKE ?", "%#{params[:query2]}%")
+    else  
       @pets = Pet.all
     end
   end
