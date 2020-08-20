@@ -4,13 +4,12 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :availability %>
-    <%= f.input :species %>
+    <%= f.input :species, collection: ["dog", "dragon", "cat", "lion", "hamster", "lizard", "anteater", "horse", "cactus"] %>
     <%= f.input :pet_ability %>
-    <%= f.input :location %>
+    <%= f.input :location, collection: ["Aachen", "Augsburg", "Berlin", "Bonn", "Braunscheig", "Bremen", "Chemnitz", "Dortmund", "Dresden", "Düsseldorf", "Erfurt", "Frankfurt", "Göttingen", "Hamburg", "Hannover", "Karlsruhe", "Kiel", "Köln", "Leipzig", "Mannheim", "Münich", "Nürnberg", "Stuttgart", "Wuppertal"] %>
     <%= f.input :photo, as: :file %>
     <%= f.submit 'Add Pet', class: 'btn btn-primary' %>
     <% end %>
     <hr>
     <%= link_to  "Back", pets_path, class: "btn btn-primary"%>
 </div>
-
