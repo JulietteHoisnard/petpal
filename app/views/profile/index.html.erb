@@ -31,7 +31,7 @@
               <p class="card-text"><%= pet.description %></p>
               <a href="#" class="btn btn-warning btn-sm">Edit PetPal</a>
               <div class="btn btn-warning btn-sm">
-                <%= link_to 'Delete PetPal', pet_path(pet), method: :delete, data: { confirm: "Are you sure you want to delete this PetPal?"} %>
+                <%= link_to 'Delete PetPal', pet_path(pet), class: "link-color", method: :delete, data: { confirm: "Are you sure you want to delete this PetPal?"} %>
               </div>
             </div>
           </div>

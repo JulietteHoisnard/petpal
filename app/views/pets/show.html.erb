@@ -1,25 +1,32 @@
 <div class="container">
 
-   <div class="row">
+   <div class="row mt-5">
     <div class="col-xl-6">
-      <%= cl_image_tag @pet.photo.key, height: 400, width: 550, crop: :fill %>
+      <%  if @pet.photo.attached? %>
+            <%= cl_image_tag @pet.photo.key,:class=>"img-show", height: 400, width: 550, crop: :fill %>
+      <% else %>
+            <%= image_tag "https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80", height: 300, width: 400, crop: :fill  %>
+      <% end %>
+
     </div>
-       <div class="col">
+       <div class="col ml-3">
           <h1>YOYO I’m <%= @pet.name  %>!</h1>
-          <h2>Look at what we can do together:</h2>
-          <p>👋  <%= @pet.pet_ability %></p>
-          <div class="pet-owner">
-            <%= link_to image_tag('https://cdn3.iconfinder.com/data/icons/business-round-flat-vol-1-1/36/user_account_profile_avatar_person_student_male-512.png'), profile_path %>
-            <p>This is <%= @pet.name %>'s owner! Check the profile!</p>
+          <h3>Look at what we can do together:</h3>
+          <div class="what-we-can-do">
+             <p>👋 <%= @pet.pet_ability %> </p>
+          </div>
+          <div class="pet-owner">       
+            <img src="https://cdn3.iconfinder.com/data/icons/business-round-flat-vol-1-1/36/user_account_profile_avatar_person_student_male-512.png" class="avatar" />
+            <p>👈 This is <%= @pet.name %>'s owner! Check the profile!</p>
           </div>
           <div class="appointment-container">
-            <p>🕜  When do you want to meet me?</p>
+            <!-- <p>🕜  When do you want to meet me?</p> -->
               <%= simple_form_for([@pet, @appointment]) do |f| %>
                 <%= f.label :start_date_time %>
                 <%= f.text_field :start_date_time %>
                 <%= f.label :end_date_time %>
                 <%= f.text_field :end_date_time %>
-                <button type="submit" class="btn btn-warning mb-2"><%= f.button :submit,'Reserve'%></button>
+                <button type="submit" id="btn-book" class="btn btn-warning mb-2 btn-book text-white"><%= f.button :submit,"Book #{ @pet.name } "%></button>
               <% end %>
             </div>
         </div>
@@ -38,7 +45,7 @@
     start_date._input.addEventListener('change', e => end_date.set('minDate', start_date.selectedDates[0]))
   </script>
 
-  <div class="row">
+  <div class="row description justify-content-center">
     <div class="col-xl-12 text-center">
       <h2>A bit about me</h2>
       <p><%= @pet.description %></p>
