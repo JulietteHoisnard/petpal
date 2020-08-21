@@ -11,9 +11,18 @@
             <h5 class="card-title"><%= @user.username %></h5>
             <p class="card-text"><%= @user.bio %></p>
             <% if current_user == @user %>
-            <div class="btn btn-warning">
-              <%= link_to 'Edit profile', edit_user_path %>
+
+            <div class="container container-btn">
+              <div class="btn btn-warning btn-sm">
+              <%= link_to 'Edit profile', edit_user_path, class: "link-color" %>
+              </div>
+              <div class="btn btn-warning btn-sm">
+              <%= link_to 'Add a pet', new_pet_path, class: "link-color" %>
+              </div>
+
             </div>
+
+
             <% end %>
           </div>
         </div>
@@ -26,7 +35,7 @@
     <div class="col-9">
       <div>
         <h2>PetPals owned by <%= @user.username %></h2>
-        <p> <%= link_to 'Add a pet', new_pet_path %></p>
+        <p> </p>
       </div>
       <div class="card-columns">
         <% @pets.each do |pet| %>
