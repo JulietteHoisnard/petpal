@@ -5,6 +5,7 @@ ul {
 .img-show {
   height: 100%;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 .pet-owner {
@@ -30,8 +31,10 @@ ul {
 }
 
 .btn-book {
-  border-radius: 10px;
+  border-radius: 3px;
   color: white !important;
+  width: 380px;
+  margin: 0 !important;
 }
 
 #btn-book > input {
