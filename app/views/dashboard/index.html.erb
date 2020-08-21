@@ -8,9 +8,6 @@
         <h1>My dashboard</h1>
       </div>
 
-
-      <p> <div class="btn btn-warning"><%= link_to 'Add a pet', new_pet_path %></div></p>
-
       <div class="alert alert-warning my-3 p-4" role="alert">
         <h4 class="alert-heading">Success!</h4>
         <br>
@@ -19,13 +16,13 @@
         <h3>My next appointment</h3>
         <% if @appointments %>
           <p><strong><%= @appointments.last.pet.name %></strong></p>
-          <%= @appointments.last.start_date_time.strftime("%A, %d %b %Y @ %l:%M %p") %>
+          <p><strong>From: </strong><%= @appointments.last.start_date_time.strftime("%A, %d %b %Y @ %l:%M %p") %>
           <br>
-          <%= @appointments.last.end_date_time.strftime("%A, %d %b %Y @ %l:%M %p") %>
+          <strong>To: </strong><%= @appointments.last.end_date_time.strftime("%A, %d %b %Y @ %l:%M %p") %></p>
         <% end %>
-        <p>You are well on your way to meet your new PetPal! </p>
+        <p>You are well on your way to meeting your new PetPal! </p>
 
-        <p>You'll be meeting <strong><%= @appointments.last.pet.name %></strong> next. We hope you enjoy this special moment.</p>
+        <p>You'll be spending time with <strong><%= @appointments.last.pet.name %></strong> next. It's going to be awesome.</p>
         <hr>
         <p class="mb-0">Make sure to check in with the pet's owner about any special care instructions.</p>
       </div>
@@ -43,11 +40,11 @@
         <% if @appointments %>
           <% @appointments.each do |appointment| %>
             <% unless @appointments.last == appointment %>
-              <%= cl_image_tag appointment.pet.avatar_url, crop: :fill %>
+              <%= cl_image_tag appointment.pet.avatar_url, height: 225, width: 300, crop: :fill %>
               <p><strong><%= appointment.pet.name %></strong></p>
-              <%= appointment.start_date_time.strftime("%A, %d %b %Y @ %l:%M %p") %>
+              <p>From: <%= @appointments.last.start_date_time.strftime("%A, %d %b %Y @ %l:%M %p") %>
               <br>
-              <%= appointment.end_date_time.strftime("%A, %d %b %Y @ %l:%M %p") %>
+              To: <%= @appointments.last.end_date_time.strftime("%A, %d %b %Y @ %l:%M %p") %></p>
               <hr>
               <% end %>
           <% end %>
