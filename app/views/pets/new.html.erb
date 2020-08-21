@@ -1,15 +1,17 @@
-<div class="container pt-5">
+<div class="container p-4 mb-5 mt-5 add-pet-form opacity">
   <h2>Add your Pet</h2>
     <%= simple_form_for [@pet] do |f| %>
-    <%= f.input :name %>
+    <%= f.input :name, label: "Name of my PetPal" %>
     <%= f.input :description %>
     <%= f.input :availability %>
-    <%= f.input :species, collection: ["dog", "dragon", "cat", "lion", "hamster", "lizard", "anteater", "horse", "cactus"] %>
+    <%= f.input :species, id: "no-margin", collection: ["dog", "dragon", "cat", "lion", "hamster", "lizard", "anteater", "horse", "cactus"] %>
     <%= f.input :pet_ability %>
-    <%= f.input :location, collection: ["Aachen", "Augsburg", "Berlin", "Bonn", "Braunscheig", "Bremen", "Chemnitz", "Dortmund", "Dresden", "Düsseldorf", "Erfurt", "Frankfurt", "Göttingen", "Hamburg", "Hannover", "Karlsruhe", "Kiel", "Köln", "Leipzig", "Mannheim", "Münich", "Nürnberg", "Stuttgart", "Wuppertal"] %>
+    <%= f.input :location, id: "no-margin", collection: ["Aachen", "Augsburg", "Berlin", "Bonn", "Braunscheig", "Bremen", "Chemnitz", "Dortmund", "Dresden", "Düsseldorf", "Erfurt", "Frankfurt", "Göttingen", "Hamburg", "Hannover", "Karlsruhe", "Kiel", "Köln", "Leipzig", "Mannheim", "Münich", "Nürnberg", "Stuttgart", "Wuppertal"] %>
+    <br>
     <%= f.input :photo, as: :file %>
-    <%= f.submit 'Add Pet', class: 'btn btn-primary' %>
+    <br>
+    <%= f.submit 'Add Pet', class: 'btn btn-success btn-block' %>
     <% end %>
     <hr>
-    <%= link_to  "Back", pets_path, class: "btn btn-primary"%>
+    <%= link_to  "Back to all my PetPals", pets_path, class: "btn btn-outline-secondary btn-block"%>
 </div>
