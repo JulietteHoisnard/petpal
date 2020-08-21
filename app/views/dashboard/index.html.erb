@@ -8,8 +8,9 @@
         <h1>My dashboard</h1>
       </div>
 
-      <div class="alert alert-warning my-3 p-4" role="alert">
-        <h4 class="alert-heading">Success!</h4>
+      <br>
+
+        <h4>Success!</h4>
         <br>
         <%= cl_image_tag @appointments.last.pet.avatar_url, crop: :fill %>
         <p>
@@ -25,7 +26,6 @@
         <p>You'll be spending time with <strong><%= @appointments.last.pet.name %></strong> next. It's going to be awesome.</p>
         <hr>
         <p class="mb-0">Make sure to check in with the pet's owner about any special care instructions.</p>
-      </div>
 
       <hr>
 
