@@ -11,7 +11,7 @@
 
       <p> <div class="btn btn-warning"><%= link_to 'Add a pet', new_pet_path %></div></p>
 
-      <div class="alert alert-warning my-3 p-4" role="alert">
+      <div class="alert alert-warning my-3 p-4" role="alert" id="dash-info">
         <h4 class="alert-heading">Success!</h4>
         <br>
         <%= cl_image_tag @appointments.last.pet.avatar_url, crop: :fill %>
