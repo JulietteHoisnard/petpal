@@ -1,16 +1,16 @@
 <div class="container p-4 mb-5 mt-5 add-pet-form opacity">
   <h2>Add your Pet</h2>
     <%= simple_form_for [@pet] do |f| %>
-    <%= f.input :name, label: "Name of my PetPal" %>
-    <%= f.input :description %>
+    <%= f.input :name, label: "Name of my PetPal", :placeholder => 'Pingo' %>
+    <%= f.input :description, :placeholder => 'Why your PetPal is the best?'%>
     <%= f.input :availability %>
-    <%= f.input :species, id: "no-margin", collection: ["dog", "dragon", "cat", "lion", "hamster", "lizard", "anteater", "horse", "cactus"] %>
-    <%= f.input :pet_ability %>
-    <%= f.input :location, id: "no-margin", collection: ["Aachen", "Augsburg", "Berlin", "Bonn", "Braunscheig", "Bremen", "Chemnitz", "Dortmund", "Dresden", "Düsseldorf", "Erfurt", "Frankfurt", "Göttingen", "Hamburg", "Hannover", "Karlsruhe", "Kiel", "Köln", "Leipzig", "Mannheim", "Münich", "Nürnberg", "Stuttgart", "Wuppertal"] %>
+    <%= f.input :species, id: "no-margin", :prompt => 'Dog / Cat / Snake', collection: ["dog", "dragon", "cat", "lion", "hamster", "lizard", "anteater", "horse", "cactus"] %>
+    <%= f.input :pet_ability, label: "My pet is available for 👇", :placeholder => 'Pingo is available for morning walks every day!' %>
+    <%= f.input :location, :prompt => 'Berlin', id: "no-margin", collection: ["Aachen", "Augsburg", "Berlin", "Bonn", "Braunscheig", "Bremen", "Chemnitz", "Dortmund", "Dresden", "Düsseldorf", "Erfurt", "Frankfurt", "Göttingen", "Hamburg", "Hannover", "Karlsruhe", "Kiel", "Köln", "Leipzig", "Mannheim", "Münich", "Nürnberg", "Stuttgart", "Wuppertal"] %>
     <br>
     <%= f.input :photo, as: :file %>
     <br>
-    <%= f.submit 'Add Pet', class: 'btn btn-success btn-block' %>
+    <%= f.submit 'Add Pet', class: 'btn btn-add btn-block' %>
     <% end %>
     <hr>
     <%= link_to  "Back to all my PetPals", pets_path, class: "btn btn-outline-secondary btn-block"%>
