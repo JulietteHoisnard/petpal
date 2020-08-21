@@ -12,15 +12,13 @@
             <p class="card-text"><%= @user.bio %></p>
             <% if current_user == @user %>
 
-            <div class="container container-btn">
-              <div class="btn btn-warning btn-sm">
+            <div class="btn btn-warning btn-sm mb-2">
               <%= link_to 'Edit profile', edit_user_path, class: "link-color" %>
-              </div>
-              <div class="btn btn-warning btn-sm">
-              <%= link_to 'Add a pet', new_pet_path, class: "link-color" %>
-              </div>
-
             </div>
+            <div class="btn btn-warning btn-sm">
+              <%= link_to 'Add a pet', new_pet_path, class: "link-color" %>
+            </div>
+
 
 
             <% end %>
