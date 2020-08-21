@@ -131,3 +131,15 @@ img {
 .font-cond-b {
     font-weight: 700 !important;
 }
+// Adding CSS for Landing Page to fix photos stretching
+.img-show {
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+
+
+
+
+
