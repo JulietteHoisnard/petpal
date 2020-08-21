@@ -40,7 +40,7 @@
         <% if @appointments %>
           <% @appointments.each do |appointment| %>
             <% unless @appointments.last == appointment %>
-              <%= cl_image_tag appointment.pet.avatar_url, crop: :fill %>
+              <%= cl_image_tag appointment.pet.avatar_url, height: 225, width: 300, crop: :fill %>
               <p><strong><%= appointment.pet.name %></strong></p>
               <p>From: <%= @appointments.last.start_date_time.strftime("%A, %d %b %Y @ %l:%M %p") %>
               <br>
