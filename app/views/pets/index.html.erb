@@ -8,7 +8,7 @@
   <div id="cards-container">
     <div class="card-columns">
       <% @pets.each do |pet| %>
-        <%= link_to pet_path(pet), style: "color: black;" do %>
+        <%= link_to pet_path(pet), style: "color: black; text-decoration: none" do %>
         <div class="card" style="width: 350px;">
           <div class="card-trip">
           <%= cl_image_tag pet.avatar_url, height: 225, width: 350, crop: :fill %>
