@@ -9,20 +9,19 @@
     <div class="card-columns">
       <% @pets.each do |pet| %>
         <%= link_to pet_path(pet), style: "color: black;" do %>
-          <div class="card" style="width: 350px;">
-            <div class="card-trip">
-            <%= cl_image_tag pet.avatar_url, height: 225, width: 350, crop: :fill %>
-              <div class="card-trip-infos">
-                <div>
-                  <h5><%= pet.name %></h5>
-                  <p><%= pet.description %></p>
-                </div>
-                <%= cl_image_tag pet.user.avatar_url, class: "card-trip-user avatar-bordered" %>
+        <div class="card" style="width: 350px;">
+          <div class="card-trip">
+          <%= cl_image_tag pet.avatar_url, height: 225, width: 350, crop: :fill %>
+            <div class="card-trip-infos">
+              <div>
+                <h5><%= pet.name %></h5>
+                <p><%= pet.description %></p>
               </div>
+              <%= link_to (cl_image_tag pet.user.avatar_url, class: "avatar-bordered card-trip-user"), user_path(pet.user_id) %>
             </div>
-
           </div>
         <% end %>
+      </div>
       <% end %>
 
     </div>
