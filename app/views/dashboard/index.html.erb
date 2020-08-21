@@ -14,9 +14,17 @@
       <div class="alert alert-warning my-3 p-4" role="alert">
         <h4 class="alert-heading">Success!</h4>
         <br>
-        <%= cl_image_tag @appointments.last.pet.photo.key, crop: :fill %>
+        <%= cl_image_tag @appointments.last.pet.avatar_url, crop: :fill %>
         <p>
+        <h3>My next appointment</h3>
+        <% if @appointments %>
+          <p><strong><%= @appointments.last.pet.name %></strong></p>
+          <%= @appointments.last.start_date_time.strftime("%A, %d %b %Y @ %l:%M %p") %>
+          <br>
+          <%= @appointments.last.end_date_time.strftime("%A, %d %b %Y @ %l:%M %p") %>
+        <% end %>
         <p>You are well on your way to meet your new PetPal! </p>
+
         <p>You'll be meeting <strong><%= @appointments.last.pet.name %></strong> next. We hope you enjoy this special moment.</p>
         <hr>
         <p class="mb-0">Make sure to check in with the pet's owner about any special care instructions.</p>
@@ -31,25 +39,17 @@
     <div class="d-flex justify-content-around">
 
       <div class="flex-item">
-        <h3>My next appointment</h3>
-        <% if @appointments %>
-          <p><strong><%= @appointments.last.pet.name %></strong></p>
-          <% date = @appointments.last.start_date_time %>
-          <% date_end = @appointments.last.end_date_time %>
-          <p><%= date.strftime("%A, %d %b %Y @ %l:%M %p") %> <br>until <%= date_end.strftime("%A, %d %b %Y @ %l:%M %p")%></p>
-        <% end %>
-      </div>
-
-      <div class="flex-item">
         <h3>Past appointments</h3>
         <% if @appointments %>
           <% @appointments.each do |appointment| %>
-            <p><strong><%= appointment.pet.name %></strong></p>
-            <% date = appointment.start_date_time %>
-            <% date_end = appointment.end_date_time %>
-            <p><%= date.strftime("%A, %d %b %Y @ %l:%M %p") %> <br>until
-            <%=  date_end.strftime("%A, %d %b %Y @ %l:%M %p")%></p>
-            <hr>
+            <% unless @appointments.last == appointment %>
+              <%= cl_image_tag appointment.pet.avatar_url, crop: :fill %>
+              <p><strong><%= appointment.pet.name %></strong></p>
+              <%= appointment.start_date_time.strftime("%A, %d %b %Y @ %l:%M %p") %>
+              <br>
+              <%= appointment.end_date_time.strftime("%A, %d %b %Y @ %l:%M %p") %>
+              <hr>
+              <% end %>
           <% end %>
         <% end %>
       </div>
@@ -61,20 +61,3 @@
 
 
 </div>
-<div>
-<h2>My pets</h2>
-  <ul>
-    <% if @pets %>
-      <% @pets.each do |pet| %>
-        <li> <%= pet.name %></li>
-        <li> <%= pet.species %></li>
-        <li> <%= pet.description %></li>
-        <li> <%= pet.availability %></li>
-        <li> <%= pet.pet_ability %></li>
-        <li> <%= pet.location %></li>
-        <li><%= cl_image_tag pet.photo.key, height: 100, width: 200, crop: :fill %></li>
-      <%end%>
-    <% end %>
-  </ul>
-</div>
-
