@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-3">
+    <div class="col-5">
       <h2>User profile</h2>
 
       <div class="card-container d-flex">
-       <div class="card" style="width: 16rem;">
-          <%= cl_image_tag @user.avatar_url,:class=>"card-img-top", crop: :fill %>
+       <div class="card profile-card">
+          <%= cl_image_tag @user.avatar_url,:class=>"card-img-top avatar-profile", crop: :fill %>
           <div class="card-body">
             <h5 class="card-title"><%= @user.username %></h5>
             <p class="card-text"><%= @user.bio %></p>
@@ -26,10 +26,21 @@
 
       </div>
 
+      <div class="card-container d-flex">
+       <div class="card profile-card">
+          <div class="card-body">
+            <h5 class="card-title"><%= @user.username %>, you have reviews!</h5>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <p> I went to <%= @user.username %>'s place and had a nice walk with his pet! It was lovely and now I want to have one too! </p>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
 
-    <div class="col-9">
+    <div class="col-7">
       <div>
         <h2>PetPals owned by <%= @user.username %></h2>
         <p> </p>
